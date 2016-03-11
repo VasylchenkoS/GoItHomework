@@ -3,5 +3,5 @@ package vasylchenko.module3.mod3_1;
 /**
  * Created by v.vasilchenko on 09.03.2016.
  */
-public class Image extends File{
+public class ImageFile extends File{
 }

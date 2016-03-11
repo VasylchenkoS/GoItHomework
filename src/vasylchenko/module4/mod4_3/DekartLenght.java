@@ -5,8 +5,8 @@ import java.util.Scanner;
 /**
  * Created by v.vasilchenko on 10.03.2016.
  */
-public class Dekart {
-    Dekart(int x1, int y1, int x2, int y2)
+public class DekartLenght {
+    DekartLenght(int x1, int y1, int x2, int y2)
     {
         double lenght = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
         System.out.println("Длинна отрезка равна " + lenght);
@@ -21,6 +21,6 @@ public class Dekart {
         Scanner scan2 = new Scanner(System.in);
         x2 = scan1.nextInt();
         y2 = scan1.nextInt();
-        Dekart dekart = new Dekart(x1,y1,x2,y2);
+        DekartLenght dekart = new DekartLenght(x1,y1,x2,y2);
     }
 }

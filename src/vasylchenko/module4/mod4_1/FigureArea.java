@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by v.vasilchenko on 09.03.2016.
  */
-public class Figure {
+public class FigureArea {
     public void figureArea()
     {
         System.out.println("Введено мало аргументов");
@@ -43,7 +43,7 @@ public class Figure {
         b = sc2.nextDouble();
         Scanner sc3 = new Scanner(System.in);
         c = sc3.nextDouble();
-        Figure fig = new Figure();
+        FigureArea fig = new FigureArea();
         if ((a!=0)&&(b==0)&&(c==0))
             fig.figureArea(a);
         else if ((a!=0)&&(b!=0)&&(c==0))

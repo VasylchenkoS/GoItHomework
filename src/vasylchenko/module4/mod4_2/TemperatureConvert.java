@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by v.vasilchenko on 10.03.2016.
  */
-public class Temperature {
+public class TemperatureConvert {
 
     public double toCelsius(double temp) {
         double sumTemp = 0.5555556 * (temp - 32);
@@ -23,7 +23,7 @@ public class Temperature {
     public static void main(String[] args) {
         double tempIn;
         int varIn;
-        Temperature temperature = new Temperature();
+        TemperatureConvert temperatureConvert = new TemperatureConvert();
         System.out.println("Введите значения температуры");
         Scanner scan = new Scanner(System.in);
         tempIn = scan.nextDouble();
@@ -36,9 +36,9 @@ public class Temperature {
                 e.printStackTrace();
             }*/
         if (varIn == 1) {
-            temperature.toFahrenheit(tempIn);
+            temperatureConvert.toFahrenheit(tempIn);
         } else if (varIn == 2) {
-            temperature.toCelsius(tempIn);
+            temperatureConvert.toCelsius(tempIn);
         } else System.out.println("Что-то пошло не так");
     }
 

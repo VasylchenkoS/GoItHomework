@@ -6,32 +6,32 @@ import java.util.List;
  * Created by v.vasilchenko on 09.03.2016.
  */
 public class Directory {
-    private List<Audio> audios;
-    private List<Text> texts;
-    private List<Image> images;
+    private List<AudioFile> audioFiles;
+    private List<TextFile> texts;
+    private List<ImageFile> images;
 
-    public List<Image> getImages() {
+    public List<ImageFile> getImages() {
         return images;
     }
 
-    public void setImages(List<Image> images) {
+    public void setImages(List<ImageFile> images) {
         this.images = images;
     }
 
-    public List<Text> getTexts() {
+    public List<TextFile> getTexts() {
         return texts;
     }
 
-    public void setTexts(List<Text> texts) {
+    public void setTexts(List<TextFile> texts) {
         this.texts = texts;
     }
 
-    public List<Audio> getAudios() {
-        return audios;
+    public List<AudioFile> getAudioFiles() {
+        return audioFiles;
     }
 
-    public void setAudios(List<Audio> audios) {
-        this.audios = audios;
+    public void setAudioFiles(List<AudioFile> audioFiles) {
+        this.audioFiles = audioFiles;
     }
 
 

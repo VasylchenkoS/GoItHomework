@@ -6,31 +6,31 @@ import java.util.List;
  * Created by v.vasilchenko on 09.03.2016.
  */
 public class Bouquet {
-    private List<Aster> asters;
-    private List<Chamomile> chamomiles;
-    private List<Rose> roses;
+    private List<AsterFlower> asters;
+    private List<ChamomileFlower> chamomiles;
+    private List<RoseFlower> roses;
 
-    public List<Aster> getAsters() {
+    public List<AsterFlower> getAsters() {
         return asters;
     }
 
-    public void setAsters(List<Aster> asters) {
+    public void setAsters(List<AsterFlower> asters) {
         this.asters = asters;
     }
 
-    public List<Chamomile> getChamomiles() {
+    public List<ChamomileFlower> getChamomiles() {
         return chamomiles;
     }
 
-    public void setChamomiles(List<Chamomile> chamomiles) {
+    public void setChamomiles(List<ChamomileFlower> chamomiles) {
         this.chamomiles = chamomiles;
     }
 
-    public List<Rose> getRoses() {
+    public List<RoseFlower> getRoses() {
         return roses;
     }
 
-    public void setRoses(List<Rose> roses) {
+    public void setRoses(List<RoseFlower> roses) {
         this.roses = roses;
     }
 }
