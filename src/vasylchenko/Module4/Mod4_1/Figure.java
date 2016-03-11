@@ -1,4 +1,4 @@
-package vasylchenko.Module4.Mod4_1;
+package vasylchenko.module4.mod4_1;
 
 import java.io.IOException;
 import java.util.Scanner;

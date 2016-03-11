@@ -1,4 +1,4 @@
-package vasylchenko.Module3.Mod3_3;
+package vasylchenko.module3.mod3_3;
 
 /**
  * Created by v.vasilchenko on 09.03.2016.

@@ -1,4 +1,4 @@
-package vasylchenko.Module4.Mod4_3;
+package vasylchenko.module4.mod4_3;
 
 import java.util.Scanner;
 

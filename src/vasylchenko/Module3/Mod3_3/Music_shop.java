@@ -1,4 +1,4 @@
-package vasylchenko.Module3.Mod3_3;
+package vasylchenko.module3.mod3_3;
 
 import java.util.List;
 

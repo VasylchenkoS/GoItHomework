@@ -1,4 +1,4 @@
-package vasylchenko.Module4.Mod4_1;
+package vasylchenko.module4.mod4_1;
 
 /**
  * Created by v.vasilchenko on 09.03.2016.
