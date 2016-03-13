@@ -6,21 +6,28 @@ import java.util.Scanner;
  * Created by v.vasilchenko on 10.03.2016.
  */
 public class DekartLenght {
-    DekartLenght(int x1, int y1, int x2, int y2)
-    {
-        double lenght = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
-        System.out.println("Длинна отрезка равна " + lenght);
-    }
+
     public static void main(String[] args){
-        int x1,x2,y1,y2;
-        System.out.println("Введите координаты первой точки");
+        DekartLenght dekart = new DekartLenght();
+        dekart.getData();
+    }
+
+    public void getData() {
+        int dot1[] = new int[2];
+        int dot2[] = new int[2];
+        System.out.println("Введите через пробел координаты первой точки");
         Scanner scan1 = new Scanner(System.in);
-        x1 = scan1.nextInt();
-        y1 = scan1.nextInt();
-        System.out.println("Введите координаты второй точки");
+        dot1[0] = scan1.nextInt();
+        dot1[1] = scan1.nextInt();
+        System.out.println("Введите через пробел координаты второй точки");
         Scanner scan2 = new Scanner(System.in);
-        x2 = scan1.nextInt();
-        y2 = scan1.nextInt();
-        DekartLenght dekart = new DekartLenght(x1,y1,x2,y2);
+        dot2[0] = scan2.nextInt();
+        dot2[1] = scan2.nextInt();
+        dotLenght(dot1, dot2);
+    }
+
+    public void dotLenght(int dot1[], int dot2[]) {
+        double dotLenght = Math.sqrt(Math.pow(dot2[0] - dot1[0], 2) + Math.pow(dot2[1] - dot1[1], 2));
+        System.out.println("Длинна отрезка равна " + dotLenght);
     }
 }

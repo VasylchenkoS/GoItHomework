@@ -8,19 +8,12 @@ import java.util.Scanner;
  */
 public class TemperatureConvert {
 
-    public double toCelsius(double temp) {
-        double sumTemp = 0.5555556 * (temp - 32);
-        System.out.println("Температура " + temp + " по Фаренгейту равна " + sumTemp + " по Цельсию");
-        return sumTemp;
-    }
-
-    public double toFahrenheit(double temp) {
-        double sumTemp = temp * 1.8 + 32;
-        System.out.println("Температура " + temp + " по Цельсию равна " + sumTemp + " по Фаренгейту");
-        return sumTemp;
-    }
-
     public static void main(String[] args) {
+        TemperatureConvert temperatureConvert = new TemperatureConvert();
+        temperatureConvert.getData();
+    }
+
+    public void getData() {
         double tempIn;
         int varIn;
         TemperatureConvert temperatureConvert = new TemperatureConvert();
@@ -30,11 +23,6 @@ public class TemperatureConvert {
         System.out.println("Значение в градусах Цельсия? (д-1/н-2)");
         Scanner scan2 = new Scanner(System.in);
         varIn = scan2.nextInt();
-            /*try {
-                varIn = System.in.read();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }*/
         if (varIn == 1) {
             temperatureConvert.toFahrenheit(tempIn);
         } else if (varIn == 2) {
@@ -42,5 +30,15 @@ public class TemperatureConvert {
         } else System.out.println("Что-то пошло не так");
     }
 
+    private double toCelsius(double temp) {
+        double sumTemp = 0.5555556 * (temp - 32);
+        System.out.println("Температура " + temp + " по Фаренгейту равна " + sumTemp + " по Цельсию");
+        return sumTemp;
+    }
 
+    private double toFahrenheit(double temp) {
+        double sumTemp = temp * 1.8 + 32;
+        System.out.println("Температура " + temp + " по Цельсию равна " + sumTemp + " по Фаренгейту");
+        return sumTemp;
+    }
 }
