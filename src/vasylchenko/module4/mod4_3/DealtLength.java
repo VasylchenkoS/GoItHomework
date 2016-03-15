@@ -5,10 +5,10 @@ import java.util.Scanner;
 /**
  * Created by v.vasilchenko on 10.03.2016.
  */
-public class DekartLenght {
+public class DealtLength {
 
     public static void main(String[] args){
-        DekartLenght dekart = new DekartLenght();
+        DealtLength dekart = new DealtLength();
         dekart.getData();
     }
 
@@ -23,11 +23,11 @@ public class DekartLenght {
         Scanner scan2 = new Scanner(System.in);
         dot2[0] = scan2.nextInt();
         dot2[1] = scan2.nextInt();
-        dotLenght(dot1, dot2);
+        dotLength(dot1, dot2);
     }
 
-    public void dotLenght(int dot1[], int dot2[]) {
-        double dotLenght = Math.sqrt(Math.pow(dot2[0] - dot1[0], 2) + Math.pow(dot2[1] - dot1[1], 2));
-        System.out.println("Длинна отрезка равна " + dotLenght);
+    public void dotLength(int dot1[], int dot2[]) {
+        double dotLength = Math.sqrt(Math.pow(dot2[0] - dot1[0], 2) + Math.pow(dot2[1] - dot1[1], 2));
+        System.out.println("Длинна отрезка равна " + dotLength);
     }
 }
