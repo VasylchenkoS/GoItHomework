@@ -17,7 +17,7 @@ public class FindExtreme {
 
     public void minExtreme(int[] massive) {
         int minIndex = massive[0];
-        int i = 1;
+        int i = 0;
         do {
             if (minIndex > massive[i])
                 minIndex = massive[i];
