@@ -8,30 +8,30 @@ import java.util.Arrays;
 public class SortMassive {
 
     public void simpleSort(int[] sortMassive) {
-        System.out.println("Массив перед сортировкой имеет вид: ");
-        for (int i : sortMassive)
-            System.out.println(i);
-        Arrays.sort(sortMassive);
-        System.out.println("Массив после сортировки имеет вид: ");
-        for (int i : sortMassive)
-            System.out.println(i);
+        if (sortMassive.length <= 0) {
+            System.out.println("Массив пустой. Нечего сортировать.");
+        } else {
+            System.out.println("Массив перед сортировкой имеет вид: " + Arrays.toString(sortMassive));
+            Arrays.sort(sortMassive);
+            System.out.println("Массив после сортировки имеет вид: " + Arrays.toString(sortMassive));
+        }
     }
 
     public void bubbleSort(int[] sortMassive) {
-        System.out.println("Массив перед сортировкой имеет вид: ");
-        for (int i : sortMassive)
-            System.out.println(i);
-        for (int i = sortMassive.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (sortMassive[j] > sortMassive[j + 1]) {
-                    int tmp = sortMassive[j];
-                    sortMassive[j] = sortMassive[j + 1];
-                    sortMassive[j + 1] = tmp;
+        if (sortMassive.length <= 0) {
+            System.out.println("Массив пустой. Нечего сортировать.");
+        } else {
+            System.out.println("Массив перед сортировкой имеет вид: " + Arrays.toString(sortMassive));
+            for (int i = sortMassive.length - 1; i > 0; i--) {
+                for (int j = 0; j < i; j++) {
+                    if (sortMassive[j] > sortMassive[j + 1]) {
+                        int tmp = sortMassive[j];
+                        sortMassive[j] = sortMassive[j + 1];
+                        sortMassive[j + 1] = tmp;
+                    }
                 }
             }
+            System.out.println("Массив после сортировки имеет вид: " + Arrays.toString(sortMassive));
         }
-        System.out.println("Массив после сортировки имеет вид: ");
-        for (int i : sortMassive)
-            System.out.println(i);
     }
 }
