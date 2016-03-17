@@ -5,10 +5,10 @@ import java.util.Scanner;
 /**
  * Created by v.vasilchenko on 10.03.2016.
  */
-public class DealtLength {
+public class DotLength {
 
     public static void main(String[] args){
-        DealtLength dekart = new DealtLength();
+        DotLength dekart = new DotLength();
         dekart.getData();
     }
 
