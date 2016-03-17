@@ -8,8 +8,10 @@ import java.util.Arrays;
 public class SortMassive {
 
     public void simpleSort(int[] sortMassive) {
-        if (sortMassive.length <= 0) {
+        if (sortMassive.length == 0) {
             System.out.println("Массив пустой. Нечего сортировать.");
+        } else if (sortMassive.length == 1) {
+            System.out.println("Сортировка массива с 1 элементом дает результат " + sortMassive[0] + ". Ожидалось что-то другое? :)");
         } else {
             System.out.println("Массив перед сортировкой имеет вид: " + Arrays.toString(sortMassive));
             Arrays.sort(sortMassive);
@@ -18,8 +20,10 @@ public class SortMassive {
     }
 
     public void bubbleSort(int[] sortMassive) {
-        if (sortMassive.length <= 0) {
+        if (sortMassive.length == 0) {
             System.out.println("Массив пустой. Нечего сортировать.");
+        } else if (sortMassive.length == 1) {
+            System.out.println("Сортировка массива с 1 элементом дает результат " + sortMassive[0] + ". Ожидалось что-то другое? :)");
         } else {
             System.out.println("Массив перед сортировкой имеет вид: " + Arrays.toString(sortMassive));
             for (int i = sortMassive.length - 1; i > 0; i--) {
