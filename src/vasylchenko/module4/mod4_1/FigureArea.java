@@ -5,6 +5,11 @@ package vasylchenko.module4.mod4_1;
  */
 public class FigureArea {
 
+    public static void main(String[] args) {
+        FigureArea figureArea = new FigureArea();
+        figureArea.triangleArea(3, 4, 5);
+    }
+
     private void figureArea()
     {
         System.out.println("Введено мало аргументов");
@@ -32,10 +37,10 @@ public class FigureArea {
 
     private void triangleArea(double sideA, double sideB, double sideC) {
         //проверим существование треугольника:
-        if ((sideA<sideB+sideC)&&(sideB<sideA+sideC)&&(sideC<sideA+sideB)){
-            double p = (sideA+sideB+sideC)/2;
+        if ((sideA < sideB + sideC) && (sideB < sideA + sideC) && (sideC < sideA + sideB)) {
+            double p = (sideA + sideB + sideC) / 2;
             //Площадь треугольника вычисляется по формуле Герона:
-            double area = p*(p-sideA)*(p-sideB)*(p-sideC);
+            double area = p * (p - sideA) * (p - sideB) * (p - sideC);
             System.out.println("Площадь треугольника равна " + Math.sqrt(area));
         }
         else

@@ -16,18 +16,22 @@ public class TemperatureConvert {
     public void getData() {
         double tempIn;
         int varIn;
-        TemperatureConvert temperatureConvert = new TemperatureConvert();
-        System.out.println("Введите значения температуры");
-        Scanner scan = new Scanner(System.in);
-        tempIn = scan.nextDouble();
-        System.out.println("Значение в градусах Цельсия? (д-1/н-2)");
-        Scanner scan2 = new Scanner(System.in);
-        varIn = scan2.nextInt();
-        if (varIn == 1) {
-            temperatureConvert.toFahrenheit(tempIn);
-        } else if (varIn == 2) {
-            temperatureConvert.toCelsius(tempIn);
-        } else System.out.println("Что-то пошло не так");
+        try {
+            TemperatureConvert temperatureConvert = new TemperatureConvert();
+            System.out.println("Введите значения температуры");
+            Scanner scan = new Scanner(System.in);
+            tempIn = scan.nextDouble();
+            System.out.println("Значение в градусах Цельсия? (д-1/н-2)");
+            Scanner scan2 = new Scanner(System.in);
+            varIn = scan2.nextInt();
+            if (varIn == 1) {
+                temperatureConvert.toFahrenheit(tempIn);
+            } else if (varIn == 2) {
+                temperatureConvert.toCelsius(tempIn);
+            } else System.out.println("Что-то пошло не так");
+        } catch (IllegalStateException e) {
+            System.out.println("[Error]: Введенное значение имеет неверный формат. Ввдеите значение, тип которых int");
+        }
     }
 
     private double toCelsius(double temp) {

@@ -15,14 +15,18 @@ public class DotLength {
     public void getData() {
         int dot1[] = new int[2];
         int dot2[] = new int[2];
-        System.out.println("Введите через пробел координаты первой точки");
-        Scanner scan1 = new Scanner(System.in);
-        dot1[0] = scan1.nextInt();
-        dot1[1] = scan1.nextInt();
-        System.out.println("Введите через пробел координаты второй точки");
-        Scanner scan2 = new Scanner(System.in);
-        dot2[0] = scan2.nextInt();
-        dot2[1] = scan2.nextInt();
+        try {
+            System.out.println("Введите через пробел координаты первой точки");
+            Scanner scan1 = new Scanner(System.in);
+            dot1[0] = scan1.nextInt();
+            dot1[1] = scan1.nextInt();
+            System.out.println("Введите через пробел координаты второй точки");
+            Scanner scan2 = new Scanner(System.in);
+            dot2[0] = scan2.nextInt();
+            dot2[1] = scan2.nextInt();
+        } catch (IllegalStateException e) {
+            System.out.println("[Error]: Введенное значение имеет неверный формат. Ввдеите значение, тип которых int");
+        }
         dotLength(dot1, dot2);
     }
 
