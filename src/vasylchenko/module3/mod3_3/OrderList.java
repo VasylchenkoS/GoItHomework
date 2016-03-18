@@ -1,4 +1,4 @@
-package vasylchenko.module6.mod6_2;
+package vasylchenko.module3.mod3_3;
 
 import java.util.List;
 import java.util.Map;
@@ -8,11 +8,11 @@ import java.util.Map;
  */
 public class OrderList {
 
-    private List<NewGuitarInstrument> guitarToStay;
-    private List<NewPianoInstrument> pianoToStay;
-    private List<NewTrumpetInstrument> trumpetToStay;
+    private List<GuitarInstrument> guitarToStay;
+    private List<PianoInstrument> pianoToStay;
+    private List<TrumpetInstrument> trumpetToStay;
 
-    public void newOrderList(NewMusicShop shop, Map<String, Integer> order) {
+    public void newOrderList(MusicShop shop, Map<String, Integer> order) {
         try {
             if (order.isEmpty()) throw new NullPointerException();
             if (order.containsKey("guitar")) {
