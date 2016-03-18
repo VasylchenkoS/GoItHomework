@@ -5,10 +5,10 @@ package vasylchenko.module5.mod5_1;
  */
 public class Main {
     public static void main(String[] args) {
-        MassiveCreater massiveCreater = new MassiveCreater();
-        massiveCreater.setExtremeMassive();
+        ArrayCreater arrayCreater = new ArrayCreater();
+        arrayCreater.setArrayExtreme();
         FindExtreme findExtreme = new FindExtreme();
-        findExtreme.maxExtreme(massiveCreater.getExtremeMassive());
-        findExtreme.minExtreme(massiveCreater.getExtremeMassive());
+        findExtreme.maxExtreme(arrayCreater.getArrayExtreme());
+        findExtreme.minExtreme(arrayCreater.getArrayExtreme());
     }
 }

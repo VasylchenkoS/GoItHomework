@@ -5,11 +5,11 @@ package vasylchenko.module5.mod5_2;
  */
 public class Main {
     public static void main(String[] args) {
-        MassiveCreater massiveCreater = new MassiveCreater();
-        massiveCreater.setSortMassive();
-        SortMassive sortMassive = new SortMassive();
-        sortMassive.simpleSort(massiveCreater.getSortMassive());
-        massiveCreater.setSortMassive();
-        sortMassive.bubbleSort(massiveCreater.getSortMassive());
+        ArrayCreater arrayCreater = new ArrayCreater();
+        arrayCreater.setArraySort();
+        ArraySort arraySort = new ArraySort();
+        arraySort.simpleSort(arrayCreater.getArraySort());
+        arrayCreater.setArraySort();
+        arraySort.bubbleSort(arrayCreater.getArraySort());
     }
 }

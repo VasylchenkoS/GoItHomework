@@ -14,6 +14,7 @@ public class OrderList {
 
     public void newOrderList(NewMusicShop shop, Map<String, Integer> order) {
         try {
+            if (order.isEmpty()) throw new NullPointerException();
             if (order.containsKey("guitar")) {
                 System.out.println("Entered request: Guitar :" + order.get("guitar") + "pcs");
                 if (shop.getGuitar().size() < order.get("guitar")) throw new IllegalStateException();
@@ -38,7 +39,7 @@ public class OrderList {
         } catch (IllegalStateException e) {
             System.out.println("[Error]: Enough product in stock");
         } catch (NullPointerException e) {
-            System.out.println("[Error]: NullPointer");
+            System.out.println("[Error]: Request order is empty");
         }
 
 
