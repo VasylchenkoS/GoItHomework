@@ -7,55 +7,47 @@ import java.util.List;
  * Created by v.vasilchenko on 09.03.2016.
  */
 public class MusicShop {
-    List<GuitarInstrument> guitar;
-    List<PianoInstrument> piano;
-    List<TrumpetInstrument> trumpet;
+    private List<MusicalInstrument> shopStock;
 
-    public List<PianoInstrument> getPiano() {
-        return piano;
+    public List<MusicalInstrument> getShopStock() {
+        return shopStock;
     }
 
-    public void setPiano(List<PianoInstrument> piano) {
-        this.piano = piano;
+    public void setShopStock(List<MusicalInstrument> shopStock) {
+        this.shopStock = shopStock;
     }
 
-    public List<TrumpetInstrument> getTrumpet() {
-        return trumpet;
-    }
-
-    public void setTrumpet(List<TrumpetInstrument> trumpet) {
-        this.trumpet = trumpet;
-    }
-
-    public List<GuitarInstrument> getGuitar() {
-        return guitar;
-    }
-
-    public void setGuitar(List<GuitarInstrument> guitar) {
-        this.guitar = guitar;
-    }
-
+    @Override
     public String toString() {
-        return "MusicShop has: Piano :" + piano.size() + "pcs, Guitar :" + guitar.size() + "pcs, Trumpet:" + trumpet.size() + "pcs";
+
+        String s = "\nMusicShop has: ";
+        int count = 0;
+        String currentType = "";
+        for (MusicalInstrument mus : shopStock) {
+            for (MusicalInstrument instrument : shopStock) {
+                if (instrument.getType().equals(mus.getType())) {
+                    count++;
+                }
+            }
+            if (mus.getType() != currentType)
+                s = s + "\n" + mus.getType() + " :" + count + "pcs";
+            count = 0;
+            currentType = mus.getType();
+        }
+        return s + "\n------------------";
     }
 
     public void createShop(int guitarNum, int pianoNum, int trumpetNum) {
-        ArrayList<GuitarInstrument> guitarInstrumentArraysList = new ArrayList<>();
+        ArrayList<MusicalInstrument> instruments = new ArrayList<>();
         for (int i = 0; i < guitarNum; i++) {
-            guitarInstrumentArraysList.add(new GuitarInstrument());
+            instruments.add(new GuitarInstrument());
         }
-        setGuitar(guitarInstrumentArraysList);
-
-        ArrayList<PianoInstrument> newPianoInstruments = new ArrayList<>();
         for (int i = 0; i < pianoNum; i++) {
-            newPianoInstruments.add(new PianoInstrument());
+            instruments.add(new PianoInstrument());
         }
-        setPiano(newPianoInstruments);
-        ArrayList<TrumpetInstrument> newTrumpetInstruments = new ArrayList<>();
         for (int i = 0; i < trumpetNum; i++) {
-            newTrumpetInstruments.add(new TrumpetInstrument());
+            instruments.add(new TrumpetInstrument());
         }
-        setTrumpet(newTrumpetInstruments);
+        setShopStock(instruments);
     }
-
 }
