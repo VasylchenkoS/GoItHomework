@@ -31,9 +31,6 @@ public class SimpleCesarCipher {
 
         }
         musicShop.getShopStock();
-//        String str = "I wanna highway to hell";
-//        System.out.println(SimpleCesarCipher.encode(str));
-//        System.out.println(SimpleCesarCipher.decode(SimpleCesarCipher.encode(str)));
     }
 
     public static String decode(String enc) {
