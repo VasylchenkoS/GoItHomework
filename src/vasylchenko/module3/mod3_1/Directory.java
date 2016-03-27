@@ -1,5 +1,6 @@
 package vasylchenko.module3.mod3_1;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -31,6 +32,20 @@ public class Directory {
         file.setSize(size);
 
         return file;
+    }
+
+    public Directory createFileList(){
+        Directory directory = new Directory();
+        List<File> fileList = new LinkedList<>();
+        java.io.File file = new java.io.File("d:\\home\\java\\temp\\files");
+        for (java.io.File f : file.listFiles(java.io.File::isFile)) {
+            String name = f.getName().substring(0, f.getName().lastIndexOf("."));
+            String type = f.getName().substring(f.getName().lastIndexOf(".") + 1, f.getName().length());
+            int size = (int) (f.length() / 1024);
+            fileList.add(directory.addFileToList(name, type, size));
+        }
+        directory.setFileList(fileList);
+        return directory;
     }
 }
 

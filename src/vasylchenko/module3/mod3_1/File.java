@@ -3,7 +3,7 @@ package vasylchenko.module3.mod3_1;
 /**
  * Created by v.vasilchenko on 09.03.2016.
  */
-abstract class File implements java.io.Serializable, Comparable<File> {
+public abstract class File implements java.io.Serializable, Comparable<File> {
     private String name;
     private String type;
     private int size;
