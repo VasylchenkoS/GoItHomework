@@ -1,5 +1,7 @@
 package vasylchenko.module10;
 
+import vasylchenko.module9.SimpleCesarCipher;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -28,11 +30,10 @@ public class TryingIOTextFile {
             fileWriter = new FileWriter("D://Home//Java//MyProjects//Modules//src//vasylchenko//module10//write.txt");
             System.out.println("Enter text that has been writhing to file");
             Scanner scan = new Scanner(System.in);
-            s.append(scan.nextLine() + "\n");
-            s.append(scan.nextLine() + "\n");
-            s.append(scan.nextLine() + "\n");
-            System.out.println("Text was accepted");
-            fileWriter.write(s.toString());
+            s.append(scan.nextLine());
+            System.out.println("Text was accepted. You text is:");
+            System.out.println(s);
+            fileWriter.write(SimpleCesarCipher.encode(s.toString()));
         } finally {
             if (fileWriter != null)
                 fileWriter.close();
@@ -40,13 +41,15 @@ public class TryingIOTextFile {
     }
 
     public void fileRead() throws IOException {
-        String s = "";
+        String s;
         BufferedReader bufferedReader = null;
         try {
             bufferedReader = new BufferedReader
                     (new FileReader("D://Home//Java//MyProjects//Modules//src//vasylchenko//module10//write.txt"));
-            while ((s = bufferedReader.readLine()) != null)
-                System.out.println(s);
+            while ((s = bufferedReader.readLine()) != null) {
+                System.out.println("Text before decode :\n" + s);
+                System.out.println("Text after decode :\n" + SimpleCesarCipher.decode(s));
+            }
         } finally {
             if (bufferedReader != null)
                 bufferedReader.close();

@@ -33,10 +33,12 @@ public class SimpleCesarCipher {
     }
 
     public static String decode(String enc) {
+        if (enc.length() == 0) throw new NullPointerException("String is empty. Nothing to decode");
         return encode(enc);
     }
 
     public static String encode(String enc) {
+        if (enc.length() == 0) throw new NullPointerException("String is empty. Nothing to encode");
         offsetForCesarCipher = (26 - offsetForCesarCipher) % 26 + 26;
         StringBuilder encoded = new StringBuilder();
         for (char i : enc.toCharArray()) {
