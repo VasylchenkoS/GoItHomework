@@ -30,7 +30,6 @@ public class SimpleCesarCipher {
             System.out.printf("%-30s%n", s);
 
         }
-        musicShop.getShopStock();
     }
 
     public static String decode(String enc) {
