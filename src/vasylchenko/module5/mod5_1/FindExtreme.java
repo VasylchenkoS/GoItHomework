@@ -1,11 +1,8 @@
 package vasylchenko.module5.mod5_1;
 
-/**
- * Created by v.vasilchenko on 15.03.2016.
- */
 public class FindExtreme {
 
-    public void maxExtreme(int[] array) {
+    public int maxExtreme(int[] array) {
         int maxIndex = 0;
         try {
             if (array.length == 0) throw new NullPointerException();
@@ -22,15 +19,17 @@ public class FindExtreme {
         } catch (NullPointerException e) {
             System.out.println("Массив пустой.");
         }
+        return maxIndex;
     }
 
-    public void minExtreme(int[] array) {
+    public int minExtreme(int[] array) {
+        int minIndex = 0;
         try {
             if (array.length == 0) throw new NullPointerException();
             if (array.length == 1) {
                 System.out.println("Минимальное значение массива с 1 элементом - " + array[0] + ". Ожидалось что-то другое? :)");
             } else {
-                int minIndex = array[0];
+                minIndex = array[0];
                 int i = 0;
                 do {
                     if (minIndex > array[i])
@@ -43,6 +42,7 @@ public class FindExtreme {
         } catch (NullPointerException e) {
             System.out.println("Массив пустой.");
         }
+        return minIndex;
     }
 }
 

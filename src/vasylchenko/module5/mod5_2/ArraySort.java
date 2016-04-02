@@ -2,12 +2,9 @@ package vasylchenko.module5.mod5_2;
 
 import java.util.Arrays;
 
-/**
- * Created by v.vasilchenko on 15.03.2016.
- */
 public class ArraySort {
 
-    public void simpleSort(int[] sortArray) {
+    public int[] simpleSort(int[] sortArray) {
         try {
             if (sortArray.length == 0) throw new NullPointerException();
             if (sortArray.length == 1) {
@@ -20,9 +17,10 @@ public class ArraySort {
         } catch (NullPointerException e) {
             System.out.println("Массив пустой. Нечего сортировать.");
         }
+        return sortArray;
     }
 
-    public void bubbleSort(int[] sortArray) {
+    public int[] bubbleSort(int[] sortArray) {
         try {
             if (sortArray.length == 0) throw new NullPointerException();
             if (sortArray.length == 1) {
@@ -43,5 +41,6 @@ public class ArraySort {
         } catch (NullPointerException e) {
             System.out.println("Массив пустой. Нечего сортировать.");
         }
+        return sortArray;
     }
 }
