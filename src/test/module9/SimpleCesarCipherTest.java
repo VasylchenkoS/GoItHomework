@@ -11,8 +11,7 @@ public class SimpleCesarCipherTest {
 
     @Test
     public void testCode() throws Exception {
-        String s = SimpleCesarCipher.encode(inputString);
-        outputExpected = SimpleCesarCipher.decode(s);
+        outputExpected = SimpleCesarCipher.decode(SimpleCesarCipher.encode(inputString));
         Assert.assertEquals(outputExpected, inputString);
     }
 }
