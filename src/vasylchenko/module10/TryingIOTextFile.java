@@ -8,14 +8,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-/**
- * Created by v.vasilchenko on 27.03.2016.
- */
+
 public class TryingIOTextFile {
+
+    public static final String READ_WRITE_PATH = "D://Home//Java//MyProjects//Modules//src//vasylchenko//module10//write.txt";
+
     public static void main(String[] args) throws IOException {
         TryingIOTextFile ioTextFile = new TryingIOTextFile();
         try {
-            ioTextFile.fileWrite();
+            System.out.println("Enter text that has been writhing to file");
+            ioTextFile.fileWrite(ioTextFile.scanString());
             System.out.println("----------------------------------");
             ioTextFile.fileRead();
         } catch (IOException e) {
@@ -23,36 +25,41 @@ public class TryingIOTextFile {
         }
     }
 
-    public void fileWrite() throws IOException {
+    public void fileWrite(String writeText) throws IOException {
         FileWriter fileWriter = null;
-        StringBuilder s = new StringBuilder();
         try {
-            fileWriter = new FileWriter("D://Home//Java//MyProjects//Modules//src//vasylchenko//module10//write.txt");
-            System.out.println("Enter text that has been writhing to file");
-            Scanner scan = new Scanner(System.in);
-            s.append(scan.nextLine());
+            fileWriter = new FileWriter(READ_WRITE_PATH);
             System.out.println("Text was accepted. You text is:");
-            System.out.println(s);
-            fileWriter.write(SimpleCesarCipher.encode(s.toString()));
+            System.out.println(writeText);
+            fileWriter.write(SimpleCesarCipher.encode(writeText));
         } finally {
             if (fileWriter != null)
                 fileWriter.close();
         }
     }
 
-    public void fileRead() throws IOException {
+    private String scanString() {
+        Scanner scan = new Scanner(System.in);
+        return scan.nextLine();
+    }
+
+    public String fileRead() throws IOException {
         String s;
+        String result="";
         BufferedReader bufferedReader = null;
         try {
             bufferedReader = new BufferedReader
-                    (new FileReader("D://Home//Java//MyProjects//Modules//src//vasylchenko//module10//write.txt"));
+                    (new FileReader(READ_WRITE_PATH));
             while ((s = bufferedReader.readLine()) != null) {
+                result += SimpleCesarCipher.decode(s);
                 System.out.println("Text before decode :\n" + s);
-                System.out.println("Text after decode :\n" + SimpleCesarCipher.decode(s));
+                System.out.println("Text after decode :\n" + result);
             }
         } finally {
+
             if (bufferedReader != null)
                 bufferedReader.close();
         }
+        return result;
     }
 }
