@@ -2,15 +2,7 @@ package vasylchenko.module4.mod4_3;
 
 import java.util.Scanner;
 
-/**
- * Created by v.vasilchenko on 10.03.2016.
- */
 public class DotLength {
-
-    public static void main(String[] args){
-        DotLength dekart = new DotLength();
-        dekart.getData();
-    }
 
     public void getData() {
         int dot1[] = new int[2];
@@ -27,11 +19,12 @@ public class DotLength {
         } catch (IllegalStateException e) {
             System.out.println("[Error]: Введенное значение имеет неверный формат. Ввдеите значение, тип которых int");
         }
-        dotLength(dot1, dot2);
+        dotLength(dot1[0], dot1[1], dot2[0], dot2[1]);
     }
 
-    public void dotLength(int dot1[], int dot2[]) {
-        double dotLength = Math.sqrt(Math.pow(dot2[0] - dot1[0], 2) + Math.pow(dot2[1] - dot1[1], 2));
+    public double dotLength(int dotX1, int dotY1, int dotX2, int dotY2) {
+        double dotLength = Math.sqrt(Math.pow(dotX2 - dotX1, 2) + Math.pow(dotY2 - dotY1, 2));
         System.out.println("Длинна отрезка равна " + dotLength);
+        return dotLength;
     }
 }

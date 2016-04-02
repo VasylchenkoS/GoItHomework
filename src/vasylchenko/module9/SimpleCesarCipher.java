@@ -5,11 +5,8 @@ import vasylchenko.module3.mod3_1.File;
 import vasylchenko.module3.mod3_3.MusicShop;
 import vasylchenko.module3.mod3_3.MusicalInstrument;
 
-/**
- * Created by v.vasilchenko on 27.03.2016.
- */
 public class SimpleCesarCipher {
-    private static int offsetForCesarCipher = 12;
+    private static int offsetForCesarCipher = 3;
 
     public static void main(String[] args) {
 

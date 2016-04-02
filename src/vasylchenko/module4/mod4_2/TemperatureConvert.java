@@ -3,15 +3,9 @@ package vasylchenko.module4.mod4_2;
 
 import java.util.Scanner;
 
-/**
- * Created by v.vasilchenko on 10.03.2016.
- */
 public class TemperatureConvert {
 
-    public static void main(String[] args) {
-        TemperatureConvert temperatureConvert = new TemperatureConvert();
-        temperatureConvert.getData();
-    }
+    private final double CONST_FOR_CELSIUS_CONVERT = 5/9;
 
     public void getData() {
         double tempIn;
@@ -34,13 +28,13 @@ public class TemperatureConvert {
         }
     }
 
-    private double toCelsius(double temp) {
-        double sumTemp = 0.5555556 * (temp - 32);
+    public double toCelsius(double temp) {
+        double sumTemp = CONST_FOR_CELSIUS_CONVERT * (temp - 32);
         System.out.println("Температура " + temp + " по Фаренгейту равна " + sumTemp + " по Цельсию");
         return sumTemp;
     }
 
-    private double toFahrenheit(double temp) {
+    public double toFahrenheit(double temp) {
         double sumTemp = temp * 1.8 + 32;
         System.out.println("Температура " + temp + " по Цельсию равна " + sumTemp + " по Фаренгейту");
         return sumTemp;
