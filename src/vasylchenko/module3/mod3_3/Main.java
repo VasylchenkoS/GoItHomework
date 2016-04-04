@@ -9,17 +9,17 @@ public class Main {
     public static void main(String[] args) {
 
         MusicShop musicShop = new MusicShop();
-        musicShop.createShop(16, 2, 7);
+        musicShop.createShop(100, 50, 30);
         System.out.println(musicShop.toString());
 
         OrderList orderList1 = new OrderList();
-        orderList1.completeOrder(musicShop, 7, 0, 2);
+        orderList1.completeOrder(musicShop, 50, 20, 15);
 
         OrderList orderList2 = new OrderList();
-        orderList2.completeOrder(musicShop, 0, 1, 0);
+        orderList2.completeOrder(musicShop, 25, 20, 10);
 
         OrderList orderList3 = new OrderList();
-        orderList3.completeOrder(musicShop, 8, 1, 6);
+        orderList3.completeOrder(musicShop, 25, 101, 15);
 
     }
 }

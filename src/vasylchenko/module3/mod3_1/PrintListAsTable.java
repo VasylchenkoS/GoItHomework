@@ -2,9 +2,7 @@ package vasylchenko.module3.mod3_1;
 
 import java.util.Collection;
 
-/**
- * Created by v.vasilchenko on 26.03.2016.
- */
+
 public class PrintListAsTable {
     PrintListAsTable(Collection<File> printList) {
         if (printList == null) throw new NullPointerException("Collection is empty. Nothing to sort");

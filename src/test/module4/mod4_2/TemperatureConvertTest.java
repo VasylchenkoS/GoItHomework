@@ -16,6 +16,7 @@ public class TemperatureConvertTest {
     private double expected;
     private double tempValue2;
     private double expected2;
+
     public TemperatureConvertTest(double tempValue, double expected, double tempValue2, double expected2) {
         this.tempValue = tempValue;
         this.expected = expected;
@@ -23,7 +24,7 @@ public class TemperatureConvertTest {
         this.expected2 = expected2;
     }
 
-    @Parameterized.Parameters(name = "{index}: {1}=(5/9) * ({0} - 32)\t" +
+    @Parameterized.Parameters(name = "{index}: {1}=(5/9) * ({0} - 32)" +
                                      "{index}: {3}={2} * 1.8 + 32")
     public static Iterable<Object[]> data1() {
         return Arrays.asList(new Object[][]{

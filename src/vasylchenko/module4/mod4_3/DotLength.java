@@ -22,6 +22,7 @@ public class DotLength {
         dotLength(dot1[0], dot1[1], dot2[0], dot2[1]);
     }
 
+
     public double dotLength(int dotX1, int dotY1, int dotX2, int dotY2) {
         double dotLength = Math.sqrt(Math.pow(dotX2 - dotX1, 2) + Math.pow(dotY2 - dotY1, 2));
         System.out.println("Длинна отрезка равна " + dotLength);
