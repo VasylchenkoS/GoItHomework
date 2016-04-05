@@ -2,10 +2,8 @@ package vasylchenko.module10;
 
 import vasylchenko.module9.SimpleCesarCipher;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -20,46 +18,47 @@ public class TryingIOTextFile {
             ioTextFile.fileWrite(ioTextFile.scanString());
             System.out.println("----------------------------------");
             ioTextFile.fileRead();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println("[Error:]" + e.getMessage());
         }
     }
 
     public void fileWrite(String writeText) throws IOException {
-        FileWriter fileWriter = null;
-        try {
-            fileWriter = new FileWriter(READ_WRITE_PATH);
+
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(READ_WRITE_PATH))) {
             System.out.println("Text was accepted. You text is:");
             System.out.println(writeText);
-            fileWriter.write(SimpleCesarCipher.encode(writeText));
-        } finally {
-            if (fileWriter != null)
-                fileWriter.close();
+            bufferedWriter.write(SimpleCesarCipher.encode(writeText));
+        } catch (IOException e) {
+            System.err.println("[Error:]An IOException was caught :" + e.getMessage());
         }
-    }
-
-    private String scanString() {
-        Scanner scan = new Scanner(System.in);
-        return scan.nextLine();
     }
 
     public String fileRead() throws IOException {
         String s;
-        String result="";
-        BufferedReader bufferedReader = null;
-        try {
-            bufferedReader = new BufferedReader
-                    (new FileReader(READ_WRITE_PATH));
+        String result = "";
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(READ_WRITE_PATH))) {
             while ((s = bufferedReader.readLine()) != null) {
                 result += SimpleCesarCipher.decode(s);
                 System.out.println("Text before decode :\n" + s);
                 System.out.println("Text after decode :\n" + result);
             }
-        } finally {
-
-            if (bufferedReader != null)
-                bufferedReader.close();
+        } catch (IOException e) {
+            System.err.println("[Error:]An IOException was caught :" + e.getMessage());
         }
         return result;
+    }
+
+    private String scanString() {
+        String s = null;
+        try (Scanner scan = new Scanner(System.in)) {
+            s = scan.nextLine();
+        } catch (InputMismatchException e) {
+            System.err.println("[Error:]" + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("[Error:]An IOException was caught :" + e.getMessage());
+        }
+        return s;
     }
 }
