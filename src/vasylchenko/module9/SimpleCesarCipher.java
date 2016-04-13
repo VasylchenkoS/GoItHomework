@@ -6,7 +6,8 @@ import vasylchenko.module3.mod3_3.MusicShop;
 import vasylchenko.module3.mod3_3.MusicalInstrument;
 
 public class SimpleCesarCipher {
-    private static int OFFSET_ELEMENT = 5;
+    private static int OFFSET_CHAR_ELEMENT = 5;
+    private static int OFFSET_INT_ELEMENT = 5;
 
     public static void main(String[] args) {
 
@@ -39,16 +40,16 @@ public class SimpleCesarCipher {
 
     public static String encode(String enc) {
         if (enc.length() == 0) throw new NullPointerException("String is empty. Nothing to encode");
-        int offsetForNumberElement = (10 - OFFSET_ELEMENT) % 10 + 10;
-        int offsetForCharElement = (26 - OFFSET_ELEMENT) % 26 + 26;
+        OFFSET_INT_ELEMENT = (10 - OFFSET_INT_ELEMENT) % 10 + 10;
+        OFFSET_CHAR_ELEMENT = (26 - OFFSET_CHAR_ELEMENT) % 26 + 26;
         StringBuilder encoded = new StringBuilder();
         for (char i : enc.toCharArray()) {
             if (Character.isLetter(i)) {
                 if (Character.isUpperCase(i)) {
-                    encoded.append((char) ('A' + (i - 'A' + offsetForCharElement) % 26));
-                } else encoded.append((char) ('a' + (i - 'a' + offsetForCharElement) % 26));
+                    encoded.append((char) ('A' + (i - 'A' + OFFSET_CHAR_ELEMENT) % 26));
+                } else encoded.append((char) ('a' + (i - 'a' + OFFSET_CHAR_ELEMENT) % 26));
             } else if (Character.isDigit(i))
-                encoded.append((char) ('0' + (i - '0' + offsetForNumberElement) % 10));
+                encoded.append((char) ('0' + (i - '0' + OFFSET_INT_ELEMENT) % 10));
             else encoded.append(i);
         }
         return encoded.toString();
