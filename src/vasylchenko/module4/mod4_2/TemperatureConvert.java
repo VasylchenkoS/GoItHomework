@@ -5,9 +5,7 @@ import java.util.Scanner;
 
 public class TemperatureConvert {
 
-    private final double CONST_FOR_CELSIUS_CONVERT = 5/9;
-
-    public void getData() {
+    private void getData() {
         double tempIn;
         int varIn;
         try {
@@ -29,6 +27,7 @@ public class TemperatureConvert {
     }
 
     public double toCelsius(double temp) {
+        double CONST_FOR_CELSIUS_CONVERT = 0.555555;
         double sumTemp = CONST_FOR_CELSIUS_CONVERT * (temp - 32);
         System.out.println("Температура " + temp + " по Фаренгейту равна " + sumTemp + " по Цельсию");
         return sumTemp;
