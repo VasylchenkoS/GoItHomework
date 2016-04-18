@@ -16,7 +16,7 @@ class Traverse {
             if (current == null)
                 return null;
             inorderTraverse(current.getLeft());
-            result.append(current.getValue() + " ");
+            result.append(current.getValue()).append(" ");
             inorderTraverse(current.getRight());
         } catch (Exception e) {
             System.out.println("[Error:]" + e.getMessage());
@@ -32,7 +32,7 @@ class Traverse {
         try {
             if (current == null)
                 return null;
-            result.append(current.getValue() + " ");
+            result.append(current.getValue()).append(" ");
             preorderTraverse(current.getLeft());
             preorderTraverse(current.getRight());
         } catch (Exception e) {
