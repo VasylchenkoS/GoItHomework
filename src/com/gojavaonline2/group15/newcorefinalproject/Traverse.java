@@ -7,40 +7,54 @@ package com.gojavaonline2.group15.newcorefinalproject;
 //  Postorder – посещение левого поддерева, правого поддерева и корня.
 //  В данном проекте используется рекурсивный подход обхода дерева.
 class Traverse {
-
+    static StringBuilder result = new StringBuilder();
 //  Инфиксный обход используется тогда, когда нам надо обойти дерево в порядке,
 //  соответствующем значениям узлов.
 //  Мы обходим их от самого маленького до самого большого. То есть от левых поддеревьев к правым через корень.
-    public static void inorderTraverse(Node current) {
-        if (current == null)
-            return;
-        inorderTraverse(current.getLeft());
-        System.out.print(current.getValue() + " ");
-        inorderTraverse(current.getRight());
+    public static String inorderTraverse(Node current) {
+        try {
+            if (current == null)
+                return null;
+            inorderTraverse(current.getLeft());
+            result.append(current.getValue() + " ");
+            inorderTraverse(current.getRight());
+        } catch (Exception e) {
+            System.out.println("[Error:]" + e.getMessage());
+        } return result.toString();
     }
+
 //  При префиксном обходе алгоритм получает значение текущего узла перед тем,
 //  как перейти сначала в левое поддерево, а затем в правое.
 //  Начиная от корня, сначала мы получим значение 4.
 //  Затем таким же образом обходятся левый ребенок и его дети, затем правый ребенок и все его дети.
 //  Префиксный обход обычно применяется для копирования дерева с сохранением его структуры.
-    public static void preorderTraverse(Node current) {
-        if (current == null)
-            return;
-        System.out.print(current.getValue() + " ");
-        preorderTraverse(current.getLeft());
-        preorderTraverse(current.getRight());
+    public static String preorderTraverse(Node current) {
+        try {
+            if (current == null)
+                return null;
+            result.append(current.getValue() + " ");
+            preorderTraverse(current.getLeft());
+            preorderTraverse(current.getRight());
+        } catch (Exception e) {
+            System.out.println("[Error:]" + e.getMessage());
+        } return result.toString();
     }
+
 //  При постфиксном обходе мы посещаем левое поддерево, правое поддерево,
 //  а потом, после обхода всех детей, переходим к самому узлу.
 //  Постфиксный обход часто используется для полного удаления дерева,
 //  так как в некоторых языках программирования необходимо убирать из памяти все узлы явно,
 //  или для удаления поддерева. Поскольку корень в данном случае обрабатывается последним,
 //  мы, таким образом, уменьшаем работу, необходимую для удаления узлов.
-    public static void postorderTraverse(Node current) {
-        if (current == null)
-            return;
-        postorderTraverse(current.getLeft());
-        postorderTraverse(current.getRight());
-        System.out.print(current.getValue() + " ");
+    public static String postorderTraverse(Node current) {
+        try {
+            if (current == null)
+                return null;
+            postorderTraverse(current.getLeft());
+            postorderTraverse(current.getRight());
+            result.append(current.getValue()).append(" ");
+        } catch (Exception e) {
+            System.out.println("[Error:]" + e.getMessage());
+        } return result.toString();
     }
 }

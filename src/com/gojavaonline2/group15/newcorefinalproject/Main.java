@@ -15,25 +15,30 @@ public class Main {
 //      пока не будет построено все дерево целиком.
 
 //      далее проверяем обход дерева тремя методами с выводом результата на экран
-        Traverse.preorderTraverse(tree.getNode());
-        System.out.println("\nInorder Traverse Procedure Completed");
-        Traverse.inorderTraverse(tree.getNode());
-        System.out.println("\nPreorder Traverse Procedure Completed");
-        Traverse.postorderTraverse(tree.getNode());
-        System.out.println("\nPostorder Traverse Procedure Completed");
+        System.out.println(Traverse.preorderTraverse(tree.getRootNode()));
+        Traverse.result.delete(0,Traverse.result.length());
+        System.out.println("Inorder Traverse Procedure Completed\n");
+        System.out.println(Traverse.inorderTraverse(tree.getRootNode()));
+        Traverse.result.delete(0,Traverse.result.length());
+        System.out.println("Preorder Traverse Procedure Completed\n");
+        System.out.println(Traverse.postorderTraverse(tree.getRootNode()));
+        Traverse.result.delete(0,Traverse.result.length());
+        System.out.println("Postorder Traverse Procedure Completed\n");
 
 //      изменим тип данных, но сохраним структуру дерева, для упрощения сравнения результатов
 //      и повторим те-же процедуры, что и в предыдущем случае
         Tree<String> tree1 = new Tree<String>().add("node7").add("node8")
                 .add("node9").add("node5").add("node6").add("node4")
                 .add("node2").add("node3").add("node1");
-        Traverse.preorderTraverse(tree1.getNode());
-        System.out.println("\nInorder Traverse Procedure Completed");
-        Traverse.inorderTraverse(tree1.getNode());
-        System.out.println("\nPreorder Traverse Procedure Completed");
-        Traverse.postorderTraverse(tree1.getNode());
-        System.out.println("\nPostorder Traverse Procedure Completed");
-        System.out.println();
+        System.out.println(Traverse.preorderTraverse(tree1.getRootNode()));
+        Traverse.result.delete(0,Traverse.result.length());
+        System.out.println("Inorder Traverse Procedure Completed\n");
+        System.out.println(Traverse.inorderTraverse(tree1.getRootNode()));
+        Traverse.result.delete(0,Traverse.result.length());
+        System.out.println("Preorder Traverse Procedure Completed\n");
+        System.out.println(Traverse.postorderTraverse(tree1.getRootNode()));
+        Traverse.result.delete(0,Traverse.result.length());
+        System.out.println("Postorder Traverse Procedure Completed\n");
     }
 }
 

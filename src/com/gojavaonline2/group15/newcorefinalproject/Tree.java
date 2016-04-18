@@ -8,7 +8,7 @@ package com.gojavaonline2.group15.newcorefinalproject;
 class Tree<T extends Comparable<T>> {
     private Node<T> root; // указатель на корневую вершину
 
-    public Node<T> getNode() {
+    public Node<T> getRootNode() {
         return root;
     }
 
