@@ -5,7 +5,7 @@ package com.gojavaonline2.group15.newcorefinalproject;
 //  полезны как структура данных для различных алгоритмов или как основа некоторых
 //  других структур данных, как хэш таблици и множества, например.
 
-class Tree<T extends Comparable<T>> {
+public class Tree<T extends Comparable<T>> {
     private Node<T> root; // указатель на корневую вершину
 
     public Node<T> getRootNode() {

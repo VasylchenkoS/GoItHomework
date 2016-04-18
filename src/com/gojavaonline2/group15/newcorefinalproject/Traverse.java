@@ -6,7 +6,7 @@ package com.gojavaonline2.group15.newcorefinalproject;
 //  Preorder – посещение корня, левого поддерева и правого поддерева.
 //  Postorder – посещение левого поддерева, правого поддерева и корня.
 //  В данном проекте используется рекурсивный подход обхода дерева.
-class Traverse {
+public class Traverse {
     static StringBuilder result = new StringBuilder();
 //  Инфиксный обход используется тогда, когда нам надо обойти дерево в порядке,
 //  соответствующем значениям узлов.
