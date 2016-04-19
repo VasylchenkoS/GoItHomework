@@ -9,10 +9,6 @@ public class UserConsoleInterface {
     private Tree tree = null;
 
     UserConsoleInterface() {
-        userConsoleInterfaceReader();
-    }
-
-    private void userConsoleInterfaceReader() {
         System.out.println("Введите число, чтобы начать работу:\n" +
                 "1. Создать Simple дерево с корнями Integer\n" +
                 "2. Создать Simple дерево с корнями String\n" +
@@ -21,6 +17,10 @@ public class UserConsoleInterface {
                 "5. Выполнить инфиксный обход \n" +
                 "6. Выполнить постфиксный обход \n" +
                 "0. Завершить работу программы");
+        userConsoleInterfaceReader();
+    }
+
+    private void userConsoleInterfaceReader() {
         int resultReader;
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
@@ -33,9 +33,9 @@ public class UserConsoleInterface {
                 }
             }
         } catch (NullPointerException e) {
-            System.out.println("[Error in UserConsoleInterface:] NullPointerException. Message: " + e.getMessage());
+            System.out.println("[Error:] NullPointerException. Message: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("[Error in UserConsoleInterface: Message: " + e.getMessage());
+            System.out.println("[Error:] Message: " + e.getMessage());
         }
     }
 

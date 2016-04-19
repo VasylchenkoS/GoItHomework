@@ -24,7 +24,8 @@ public class Traverse {
             inorderTraverse(current.getRight());
         } catch (Exception e) {
             System.out.println("[Error:]" + e.getMessage());
-        } return result.toString();
+        }
+        return result.toString();
     }
 
 //  При префиксном обходе алгоритм получает значение текущего узла перед тем,

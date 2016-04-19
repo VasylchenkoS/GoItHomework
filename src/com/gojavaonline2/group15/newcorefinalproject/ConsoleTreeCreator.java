@@ -15,24 +15,30 @@ public class ConsoleTreeCreator {
                 "ключи меньшие (соответственно большие) чем X\n" +
                 "4. Для завершения создания введите 0");
         Tree<Integer> tree = new Tree<>();
-        int currentNodeValue;
-        try  {
-            Scanner scannerInputValue = new Scanner(System.in);
-            while (true) {
-                try {
-                    currentNodeValue = scannerInputValue.nextInt();
-                } catch (Exception e) {
-                    continue;
-                }
-                if (currentNodeValue == 0)
-                    break;
-                else tree.add(currentNodeValue);
-            }
-        } catch (Exception e) {
-            System.out.println("[Error in ConsoleTreeCreator:]Something happens. " + e.getMessage());
+        int addNodeValue;
+        while (true) {
+            addNodeValue = readDataFromConsoleScanner();
+            if (addNodeValue == 0)
+                break;
+            else tree.add(addNodeValue);
         }
         if (tree.getRootNode() != null)
             return tree;
         else return null;
+    }
+
+    public int readDataFromConsoleScanner() {
+        int currentNodeValue = 0;
+        try {
+            Scanner scannerInputValue = new Scanner(System.in);
+            try {
+                currentNodeValue = scannerInputValue.nextInt();
+            } catch (Exception ignored) {
+                System.out.println("[Error:] Тип значений должен быть Integer");
+            }
+        } catch (Exception e) {
+            System.out.println("[Error:]Something happens. " + e.getMessage());
+        }
+        return currentNodeValue;
     }
 }
