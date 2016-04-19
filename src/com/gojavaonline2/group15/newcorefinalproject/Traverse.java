@@ -1,13 +1,17 @@
 package com.gojavaonline2.group15.newcorefinalproject;
 
-
 //  Обход дерева, это процесс обхождения всех узлов и их обрабатывании. Существует три типа обхода дерева:
 //  Inorder – посещение левого поддерева, корня и правого поддерева.
 //  Preorder – посещение корня, левого поддерева и правого поддерева.
 //  Postorder – посещение левого поддерева, правого поддерева и корня.
 //  В данном проекте используется рекурсивный подход обхода дерева.
 public class Traverse {
-    static StringBuilder result = new StringBuilder();
+    private static final StringBuilder result = new StringBuilder();
+//  из-за использования рекурсивного подхода, приходится очищать данную строку результата
+//  после каждого использования вне метода обхода
+    public static void clearResult(){
+       result.delete(0, result.length());
+    }
 //  Инфиксный обход используется тогда, когда нам надо обойти дерево в порядке,
 //  соответствующем значениям узлов.
 //  Мы обходим их от самого маленького до самого большого. То есть от левых поддеревьев к правым через корень.
@@ -57,4 +61,5 @@ public class Traverse {
             System.out.println("[Error:]" + e.getMessage());
         } return result.toString();
     }
+
 }
